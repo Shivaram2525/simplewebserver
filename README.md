@@ -78,7 +78,8 @@ httpd.serve_forever()
 
 ## OUTPUT:
 ![Django_1](https://github.com/user-attachments/assets/cc136be2-5035-4732-84f2-3d508561632b)
-![Django_2](https://github.com/user-attachments/assets/2ebb22fe-1a6a-48e5-b449-aaa858d18e09)
+<img width="1680" alt="Screenshot 2024-09-18 at 8 31 24 AM" src="https://github.com/user-attachments/assets/ca7f9300-0733-42da-9bb1-5dd407e65460">
+
 
 
 
