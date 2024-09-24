@@ -5,7 +5,7 @@
 # Reg.No.: 212223040195
 
 ## AIM:
-To develop a simple webserver to serve html pages and display the configuration details of laptop.
+Develop a webserver to display the configuration details of your laptop.
 
 ## DESIGN STEPS:
 ### Step 1: 
