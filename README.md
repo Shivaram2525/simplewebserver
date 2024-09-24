@@ -1,10 +1,11 @@
+
 # EX01 Developing a Simple Webserver
+## Date: 24-09-2024
 # Name: Shivaram M.
-# Register No.:212223040195
-## Date:4.09.2024
+# Reg.No.: 212223040195
 
 ## AIM:
-To develop a simple webserver to serve html pages.
+To develop a simple webserver to serve html pages and display the configuration details of laptop.
 
 ## DESIGN STEPS:
 ### Step 1: 
@@ -24,62 +25,57 @@ Testing the webserver.
 
 ## PROGRAM:
 ```
-from http.server import HTTPServer, BaseHTTPRequestHandler
-content = """
-<html>
-<title>Image Map </title>
+
+import platform
+from http.server import HTTPServer,BaseHTTPRequestHandler
+
+system_name = platform.system()
+node_name = platform.node()
+release = platform.release()
+version = platform.version()
+machine = platform.machine()
+processor = platform.processor()
+
+content='''
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My System Configuration</title>
+</head>
 <body>
-<table border="1" cellspacing="2" cellpadding="5">
-<caption> top five revenue generating software companies </caption>
-<tr>
-  <th>S.no</th>
-<th>Companies</th>
-<th>Revenue</th>
-</tr>
-<tr>
-<th>1</th>
-<th>Microsoft</th>
-<th>65 Billion</th>
-</tr>
-<tr>
-<th>2</th>
-<th>oracle</th>
-<th>29.6 Billion</th>
-</tr>
-<tr>
-<th>3</th>
-<th>IBM</th>
-<th>29.1 Billion</th>
-</tr>
-<tr>
-<th>4</th>
-<th>SAP</th>
-<th>6.4 Billion</th>
-</tr>
-<tr>
-<th>5</th>
-<th>Symantech</th>
-<th>5.4 Billion</th>
+    <h1>My System Configuration</h1>
+    <ul>
+        <li>'''+system_name+'''</li>
+        <li>'''+node_name+'''</li>
+        <li>'''+release+'''</li>  
+        <li>'''+version+'''</li>  
+        <li>'''+machine+'''</li>  
+        <li>'''+processor+'''</li>  
+    </ul>
 </body>
 </html>
-"""
-class myhandler(BaseHTTPRequestHandler):
+'''
+
+class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
-        print("request received")
-        self.send_response(200)
-        self.send_header('content-type', 'text/html; charset=utf-8')
+        print("Get request received...")
+        self.send_response(200) 
+        self.send_header("content-type", "text/html")       
         self.end_headers()
         self.wfile.write(content.encode())
-server_address = ('',8000)
-httpd = HTTPServer(server_address,myhandler)
-print("my webserver is running...")
+
+print("This is my webserver") 
+server_address =('',8000)
+httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
+
 ```
 
-## OUTPUT:
-![Django_1](https://github.com/user-attachments/assets/cc136be2-5035-4732-84f2-3d508561632b)
-<img width="1680" alt="Screenshot 2024-09-18 at 8 31 24 AM" src="https://github.com/user-attachments/assets/ca7f9300-0733-42da-9bb1-5dd407e65460">
 
+## OUTPUT:
+![Web_Exp_1(1)](https://github.com/user-attachments/assets/17b9c8cd-2fbc-40f2-85c6-5e4427c8c809)
+![Web_Exp_1(2)](https://github.com/user-attachments/assets/9b53ce39-94ff-4b16-9e63-19915a1f2798)
 
 
 
