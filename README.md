@@ -73,7 +73,7 @@ httpd.serve_forever()
 ```
 
 
-## OUTPUT:
+## OUTPUT
 ![Web_Exp_1(1)](https://github.com/user-attachments/assets/17b9c8cd-2fbc-40f2-85c6-5e4427c8c809)
 ![Web_Exp_1(2)](https://github.com/user-attachments/assets/9b53ce39-94ff-4b16-9e63-19915a1f2798)
 
